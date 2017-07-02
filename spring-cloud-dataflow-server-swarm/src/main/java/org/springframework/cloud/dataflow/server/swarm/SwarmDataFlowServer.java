@@ -21,9 +21,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.dataflow.server.EnableDataFlowServer;
 
 /**
- * Bootstrap class for the Kubernetes Spring Cloud Data Flow Server.
+ * Bootstrap class for the Swarm Spring Cloud Data Flow Server.
  *
- * @author Thomas Risberg
+ * @author José M. Fernández-Alba
  */
 @SpringBootApplication
 @EnableDataFlowServer

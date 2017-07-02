@@ -30,19 +30,19 @@ import org.springframework.core.Ordered;
 import org.springframework.core.io.ResourceLoader;
 
 /**
- * 
+ * @author José M. Fernández-Alba
  */
 @Configuration
 @AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
 public class SwarmDataFlowServerAutoConfiguration {
 
-    @Bean
-    public DelegatingResourceLoader delegatingResourceLoader(MavenProperties mavenProperties) {
-        DockerResourceLoader dockerLoader = new DockerResourceLoader();
-        MavenResourceLoader mavenLoader = new MavenResourceLoader(mavenProperties);
-        Map<String, ResourceLoader> loaders = new HashMap<>();
-        loaders.put("docker", dockerLoader);
-        loaders.put("maven", mavenLoader);
-        return new DelegatingResourceLoader(loaders);
-    }
+	@Bean
+	public DelegatingResourceLoader delegatingResourceLoader(MavenProperties mavenProperties) {
+		DockerResourceLoader dockerLoader = new DockerResourceLoader();
+		MavenResourceLoader mavenLoader = new MavenResourceLoader(mavenProperties);
+		Map<String, ResourceLoader> loaders = new HashMap<>();
+		loaders.put("docker", dockerLoader);
+		loaders.put("maven", mavenLoader);
+		return new DelegatingResourceLoader(loaders);
+	}
 }
